@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct LabelSwitchPartState {
     var backMaskFrame: CGRect = .zero
