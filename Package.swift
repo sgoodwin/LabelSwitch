@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "LabelSwitch",
+    platforms: [.iOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -14,7 +15,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/Quick/Nimble.git", from: "9.0.0")
+        .package(url: "https://github.com/Quick/Nimble.git", from: "9.0.0"),
         .package(url: "https://github.com/Quick/Quick.git", from: "3.0.0")
     ],
     targets: [
@@ -22,11 +23,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "LabelSwitch",
-            dependencies: [],
+            dependencies: ["Nimble", "Quick"],
             path: "./LabelSwitch/Classes"
         ),
-        .testTarget(
-            name: "LabelSwitchTests",
-            dependencies: ["LabelSwitch", "Nimble", "Quick"]),
     ]
 )
